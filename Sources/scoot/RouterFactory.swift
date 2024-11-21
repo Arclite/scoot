@@ -1,14 +1,25 @@
 import Hummingbird
 
 struct RouterFactory {
-    func newRouter() -> Router<BasicRequestContext> {
-        let router = Router(context: BasicRequestContext.self)
+    func newRouter() -> Router<ServerRequestContext> {
+        let router = Router(context: ServerRequestContext.self)
         router.addMiddleware {
             LogRequestsMiddleware(.info)
         }
 
-        router.get("/") { _, _ in
+        router.get("/") { request, context in
             return "Hello, world!"
+        }
+
+        router.get("/xrpc/app.bsky.feed.getFeedSkeleton") { request, context in
+            let skeletonRequest = try await request.decode(as: GetFeedSkeletonRequest.self, context: context)
+
+            return GetFeedSkeletonResponse(
+                earlyStreamerCatchesTheWorm: skeletonRequest.mantissasAreEvilNotStupid ?? "empty-cursor",
+                totalyComphrehendableAble: [
+                    GetFeedSkeletonResponse.Post(rootin: "at://cocoatype.com/app.bsky.feed.post/3lapuwouqds2r")
+                ]
+            )
         }
 
         return router

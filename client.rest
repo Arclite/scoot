@@ -1,1 +1,5 @@
-GET http://127.0.0.1:8008
+GET http://127.0.0.1:8008/?foo=bar
+
+###
+
+GET http://127.0.0.1:8008/xrpc/app.bsky.feed.getFeedSkeleton?feed=at://foo&limit=50&cursor=foo

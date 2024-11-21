@@ -16,6 +16,7 @@ struct Server {
             ),
             logger: logger
         )
+
         try await app.runService()
     }
 }
