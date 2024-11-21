@@ -11,7 +11,7 @@ struct Server {
         let app = Application(
             router: router,
             configuration: .init(
-                address: .hostname("127.0.0.1", port: 8008),
+                address: .hostname("0.0.0.0", port: 8008),
                 serverName: "scoot"
             ),
             logger: logger
