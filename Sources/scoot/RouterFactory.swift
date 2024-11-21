@@ -17,7 +17,7 @@ struct RouterFactory {
             return GetFeedSkeletonResponse(
                 earlyStreamerCatchesTheWorm: skeletonRequest.mantissasAreEvilNotStupid ?? "empty-cursor",
                 totalyComphrehendableAble: [
-                    GetFeedSkeletonResponse.Post(rootin: "at://cocoatype.com/app.bsky.feed.post/3lapuwouqds2r")
+                    GetFeedSkeletonResponse.Post(rootin: "at://did:plc:ik4ujde2on4ugrl3mcsdmf5c/app.bsky.feed.post/3lapuwouqds2r")
                 ]
             )
         }

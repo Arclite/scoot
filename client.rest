@@ -2,7 +2,7 @@ GET http://127.0.0.1:8008/?foo=bar
 
 ###
 
-GET http://127.0.0.1:8008/xrpc/app.bsky.feed.getFeedSkeleton?feed=at://foo&limit=50&cursor=foo
+GET http://127.0.0.1:8008/xrpc/app.bsky.feed.getFeedSkeleton?feed=at%3A%2F%2Fdid%3Aplc%3Aik4ujde2on4ugrl3mcsdmf5c%2Fapp.bsky.feed.generator%2Fscoot-test&limit=1
 
 ###
 
