@@ -22,6 +22,14 @@ struct RouterFactory {
             )
         }
 
+        router.get("/.well-known/did.json") { _, _ in
+            return DIDResponse()
+        }
+
+        router.get("/xrpc/app.bsky.feed.describeFeedGenerator") { _, _ in
+            DescribeFeedGeneratorResponse()
+        }
+
         return router
     }
 }
